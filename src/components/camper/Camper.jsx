@@ -1,13 +1,13 @@
-import css from "./Contact.module.scss";
+import css from "./Camper.module.scss";
 import { ImPhone } from "react-icons/im";
 import { ImUser } from "react-icons/im";
-import { deleteContact } from "../../redux/campers/operations";
-import { useDispatch } from "react-redux";
+// import { deleteContact } from "../../redux/campers/operations";
+// import { useDispatch } from "react-redux";
 
-const Contact = ( { id, name, number } ) => {
-  const dispatch = useDispatch();
+const Camper = ( { name, price } ) => {
+  // const dispatch = useDispatch();
 
-  const onDelete = () => dispatch(deleteContact(id));
+  // const onDelete = () => dispatch(deleteContact(id));
 
   return (
     <div className={css.item}>
@@ -18,14 +18,14 @@ const Contact = ( { id, name, number } ) => {
       </div>
       <div className={css["icon-wrapper"]}> 
       <ImPhone className="my-icon" size="24"/>
-      <p className={css.info}>{number}</p>
+      <p className={css.info}>{price}</p>
       </div>
       </div>
-      <button className={css.btn} onClick={() => onDelete(id)}>
+      {/* <button className={css.btn} onClick={() => onDelete(id)}>
         Delete
-      </button>
+      </button> */}
       </div>
   );
 };
 
-export default Contact;
+export default Camper;

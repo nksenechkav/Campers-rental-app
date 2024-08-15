@@ -10,17 +10,17 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-const initialContacts = {
-    contacts: {
+const initialCampers = {
+    campers: {
 		items: [],
     isLoading: false,
     error: null,
 	},
 }
 
-const contactsSlice = createSlice({
-  name: "contacts/items",
-  initialState: initialContacts,
+const campersSlice = createSlice({
+  name: "campers/items",
+  initialState: initialCampers,
 
   extraReducers: (builder) => {
     builder
@@ -51,4 +51,4 @@ const contactsSlice = createSlice({
   }
 });
 
-export const contactsReducer = contactsSlice.reducer;
+export const campersReducer = campersSlice.reducer;
