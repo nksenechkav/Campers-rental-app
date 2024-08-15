@@ -4,15 +4,18 @@ import css from './HomePage.module.scss';
 export default function HomePage() {
   return (
     <>
-      <DocumentTitle>Home</DocumentTitle>
+      <DocumentTitle>Camper Rental</DocumentTitle>
 
       <div className={css.container}>
-        <p className={css.title}>
-          Contact manager</p>
-        <p className={css.title}>Welcome page{' '} 
-        <span role="img" aria-label="Greeting icon">💁‍♀️
-        </span>
-        </p> 
+        <h1 className={css.title}>
+          Welcome to Camper Rental
+        </h1>
+        <p className={css.subtitle}>
+          Your adventure starts here! Explore our wide range of campers and find the perfect fit for your next journey.
+        </p>
+        <p className={css.icon}>
+          <span role="img" aria-label="Camper icon">🚐</span>
+        </p>
       </div>
     </>
   );

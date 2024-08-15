@@ -5,8 +5,7 @@ import { AppBar } from '../appBar/AppBar';
 
 export const Layout = ({children}) => {
   return (
-    <div className={css["phonebook-container"]}>
-    <h1>Phonebook</h1>
+    <div className={css["container"]}>
       <AppBar />
       <Suspense fallback={null}>  
       {children}
