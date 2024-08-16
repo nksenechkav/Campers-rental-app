@@ -9,17 +9,18 @@ const CamperList = () => {
 
   return (
     <ul className={css["camper-list"]}>
-      {filteredCampers.map((camper) => {
-        return (
+      {filteredCampers.length ? (
+        filteredCampers.map(camper => (
           <li key={camper.id}>
             <Camper
-              id={camper.id}
               name={camper.name}
-              number={camper.price}
+              price={camper.price}
             />
           </li>
-        );
-      })}
+        ))
+      ) : (
+        <p>No campers available.</p>
+      )}
     </ul>
   );
 };

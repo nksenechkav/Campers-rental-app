@@ -1,12 +1,13 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../layout/Layout';
+
 // import { PrivateRoute } from '../PrivateRoute';
 // import { RestrictedRoute } from '../RestrictedRoute';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
-const FavouritesPage = lazy(() => import('../../pages/FavouritesPage/FavouritesPage'));
 const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
+const FavouritesPage = lazy(() => import('../../pages/FavouritesPage/FavouritesPage'));
 
 const App = () => {
   

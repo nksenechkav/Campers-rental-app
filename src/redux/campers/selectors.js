@@ -1,4 +1,4 @@
-export const selectCampers = (state) => state.catalog.campers.items;
+export const selectCampers = (state) => state.campers.campers.items;
 
 export const selectIsLoading = (state) => state.campers.isLoading;
 
