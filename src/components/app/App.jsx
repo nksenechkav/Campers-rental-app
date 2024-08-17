@@ -1,3 +1,5 @@
+// src/components/app/App.jsx
+
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../layout/Layout.jsx';

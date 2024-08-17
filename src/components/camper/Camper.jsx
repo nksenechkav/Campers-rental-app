@@ -1,3 +1,5 @@
+// src/components/camper/Camper.jsx
+
 import css from "./Camper.module.scss";
 import { ImPhone } from "react-icons/im";
 import { ImUser } from "react-icons/im";

@@ -1,3 +1,5 @@
+// src/redux/campers/selectors.js
+
 export const selectCampers = (state) => state.campers.campers.items;
 
 export const selectIsLoading = (state) => state.campers.isLoading;

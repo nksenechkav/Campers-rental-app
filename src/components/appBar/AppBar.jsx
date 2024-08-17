@@ -1,3 +1,5 @@
+// src/components/appBar/AppBar.jsx
+
 import { Navigation } from '../navigation/Navigation.jsx';
 import css from './AppBar.module.scss';
 

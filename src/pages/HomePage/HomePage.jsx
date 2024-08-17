@@ -1,3 +1,5 @@
+// src/pages/HomePage/HomePage.jsx
+
 import DocumentTitle from '../../components/DocumentTitle.jsx';
 import css from './HomePage.module.scss';
 

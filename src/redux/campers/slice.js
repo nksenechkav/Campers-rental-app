@@ -1,3 +1,5 @@
+// src/redux/campers/slice.js
+
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCampers } from './operations';
 
