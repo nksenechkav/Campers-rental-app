@@ -1,7 +1,7 @@
-import Camper from "../camper/Camper";
+import Camper from "../camper/Camper.jsx";
 import css from "./CamperList.module.scss";
 import { useSelector } from 'react-redux'
-import { selectFilteredCampers } from "../../redux/filters/selectors";
+import { selectFilteredCampers } from "../../redux/filters/selectors.js";
 
 
 const CamperList = () => {

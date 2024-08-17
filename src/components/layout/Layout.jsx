@@ -1,6 +1,6 @@
 import css from './Layout.module.scss';
 import { Suspense } from 'react';
-import { AppBar } from '../appBar/AppBar';
+import { AppBar } from '../appBar/AppBar.jsx';
 
 
 export const Layout = ({children}) => {

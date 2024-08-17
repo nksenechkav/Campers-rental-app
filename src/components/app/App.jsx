@@ -1,11 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from '../layout/Layout';
-
-
-
-// import { PrivateRoute } from '../PrivateRoute';
-// import { RestrictedRoute } from '../RestrictedRoute';
+import { Layout } from '../layout/Layout.jsx';
 
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
@@ -13,9 +8,7 @@ const FavouritesPage = lazy(() => import('../../pages/FavouritesPage/FavouritesP
 
 
 const App = () => {
-  console.log("App Component Rendered");
   return (
-    <> 
     <Layout>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -23,7 +16,6 @@ const App = () => {
         <Route path="/favorites" element={<FavouritesPage />} />
       </Routes>
     </Layout>
-  </>
 );
 };
 

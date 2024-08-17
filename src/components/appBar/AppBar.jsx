@@ -1,4 +1,4 @@
-import { Navigation } from '../navigation/Navigation';
+import { Navigation } from '../navigation/Navigation.jsx';
 import css from './AppBar.module.scss';
 
 export const AppBar = () => {
