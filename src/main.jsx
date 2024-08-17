@@ -9,8 +9,6 @@ import 'modern-normalize';
 import './index.css';
 import App from './components/app/App'
 
-console.log("Rendering App...");
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
@@ -24,5 +22,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </React.StrictMode>
 );
-
-console.log("App Rendered");
