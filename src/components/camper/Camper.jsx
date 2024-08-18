@@ -28,7 +28,9 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
       <img className={css["image"]} src={gallery} alt={name}/>
       </div>
       <div className={css["info-wrapper"]}> 
-      <ImPhone className="my-icon" size="24"/>
+      <svg className={css["my-icon"]} width="20" height="20">
+            <use href="/public/icons.svg#icon-AC"></use>
+      </svg>
       <p className={css.info}>{price}</p>
       </div>
       {/* <button className={css.btn} onClick={() => onDelete(id)}>
