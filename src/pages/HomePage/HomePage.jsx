@@ -15,9 +15,8 @@ export default function HomePage() {
         <p className={css.subtitle}>
           Your adventure starts here! Explore our wide range of campers and find the perfect fit for your next journey.
         </p>
-        <p className={css.icon}>
-          <span role="img" aria-label="Camper icon">🚐</span>
-        </p>
+        <img src="../../../public/camper.png" alt="camping trip"></img>
+        
       </div>
     </>
   );

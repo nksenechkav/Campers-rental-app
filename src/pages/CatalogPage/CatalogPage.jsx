@@ -19,7 +19,6 @@ export default function CatalogPage() {
   const error = useSelector(selectError);
 
   useEffect(() => {
-    console.log("Fetching campers...");
     dispatch(fetchCampers());
   }, [dispatch]);
 

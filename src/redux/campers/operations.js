@@ -9,11 +9,14 @@ export const fetchCampers = createAsyncThunk(
   'campers/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/campers');
-      console.log(response.data);
+      const response = await axios.get('/campers', {
+      // params: { query: query,
+      //   page: page,
+      //   per_page: 12
+      // },
+      });
       return response.data;
     } catch (e) {
-      console.error("Error fetching data:", e.message);
       return thunkAPI.rejectWithValue(e.message);
     }
   }
