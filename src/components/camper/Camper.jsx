@@ -1,12 +1,11 @@
 // src/components/camper/Camper.jsx
 
 import css from "./Camper.module.scss";
-import { ImPhone } from "react-icons/im";
-import { ImUser } from "react-icons/im";
+import { BsStarFill } from "react-icons/bs";
 // import { deleteContact } from "../../redux/campers/operations";
 // import { useDispatch } from "react-redux";
 
-const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews}, onImgClick} ) => {
+const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews, kitchen, beds}, onShowClick} ) => {
   // const dispatch = useDispatch();
 
   // const onDelete = () => dispatch(deleteContact(id));
@@ -15,23 +14,66 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
 
     const content = {
       modal: gallery,
-      name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews
+      name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews, kitchen, beds
     };
 
-    onImgClick(content);
+    onShowClick(content);
   }
-
+  const formattedPrice = `€${price.toFixed(2)}`;
 
   return (
     <div className={css.item}>
       <div className={css["image-wrapper"]}> 
-      <img className={css["image"]} src={gallery} alt={name}/>
+      <img className={css["image"]} src={gallery[0]} alt={name} />
       </div>
       <div className={css["info-wrapper"]}> 
-      <svg className={css["my-icon"]} width="20" height="20">
-            <use href="/public/icons.svg#icon-AC"></use>
-      </svg>
-      <p className={css.info}>{price}</p>
+      <div className={css["info-header"]}>
+      <p className={css.info}>{name}</p>
+      <div className={css["wrapper-header"]}>
+      <p className={css.info}>{formattedPrice}</p>
+      <svg className={css["my-icon"]} width="24" height="24"><use href="/public/icons.svg#icon-heart-black"></use></svg>
+      </div>
+      </div>
+      <div className={css["info-location"]}>
+      <div className={css["wrapper-location"]}>
+      <BsStarFill size={16} color="gold" />
+      <p className={css.info}>{rating}</p>
+      </div>
+      <div className={css["wrapper-location"]}>
+      <svg className={css["my-icon"]} width="16" height="16"><use href="/public/icons.svg#icon-map-black"></use></svg>
+      <p className={css.info}>{location}</p>
+      </div>
+      </div>
+      <p className={css["info-description"]}>{description}</p>
+      <div className={css["info-services"]}>
+      <div className={css["wrapper-services"]}>
+        <svg className={css["my-icon-unique"]} width="20" height="20"><use href="/public/icons.svg#icon-users"></use></svg>
+        <p className={css.info}>{adults} adults</p>
+      </div>
+      <div className={css["wrapper-services"]}>
+        <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-automatic"></use></svg>
+        <p className={css.info}>{transmission}</p>
+      </div>
+      <div className={css["wrapper-services"]}>
+        <svg className={css["my-icon-unique"]} width="20" height="20"><use href="/public/icons.svg#icon-petrol"></use></svg>
+        <p className={css.info}>{engine}</p>
+      </div>
+      <div className={css["wrapper-services"]}>
+        <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-kitchen"></use></svg>
+        <p className={css.info}>{kitchen} kitchen</p>
+      </div>
+      <div className={css["wrapper-services"]}>
+        <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-beds"></use></svg>
+        <p className={css.info}>{beds} beds</p>
+      </div>
+      <div className={css["wrapper-services"]}>
+        <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-AC"></use></svg>
+        <p className={css.info}>AC</p>
+      </div>
+      </div>
+      <button className={css.btn} onClick={handleClick}>
+        Show more
+      </button>
       </div>
       {/* <button className={css.btn} onClick={() => onDelete(id)}>
         Delete

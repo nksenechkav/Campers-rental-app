@@ -6,14 +6,14 @@ import { useSelector } from 'react-redux'
 import { selectFilteredCampers } from "../../redux/filters/selectors.js";
 
 
-const CamperList = ({onImgClick}) => {
+const CamperList = ({onShowClick}) => {
   const filteredCampers = useSelector(selectFilteredCampers);
 
   return (
     <ul className={css["camper-list"]}> { 
-      filteredCampers.map(camper => (
-          <li key={camper.id}>
-            <Camper camper={camper} onImgClick={onImgClick}/>
+      filteredCampers.map((camper, index) => (
+          <li key={`${camper.id}-${index}`}>
+            <Camper camper={camper} onShowClick={onShowClick}/>
           </li>
         ))
       }
