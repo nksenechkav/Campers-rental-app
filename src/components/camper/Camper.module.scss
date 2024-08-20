@@ -51,7 +51,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
 }
 .wrapper-header {
@@ -73,7 +73,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 15px;
 }
 .info-description {
   display: -webkit-box;           /* Для підтримки flexbox-стилів у Webkit */
@@ -106,8 +106,8 @@
   display: block;
   max-width: 166px;
   height: 56px;
-  background-color: #dc3545;
-  color: #fff;
+  background-color: #D84343;
+  color: #F2F4F7;
   border: none;
   padding: 16px 40px;
   border-radius: 200px;
@@ -116,5 +116,6 @@
 }
 
 .btn:hover {
-  background-color: #c82333;
+  background-color: #E44848;
+  color: #F7F7F7;
 }

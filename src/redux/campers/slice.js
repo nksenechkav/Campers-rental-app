@@ -13,16 +13,21 @@ const handleRejected = (state, action) => {
 };
 
 const initialCampers = {
-    campers: {
 		items: [],
     isLoading: false,
     error: null,
-	},
+    visibleCount: null,
 }
 
 const campersSlice = createSlice({
   name: "campers",
   initialState: initialCampers,
+
+  reducers: {
+    loadMore: (state) => {
+      state.visibleCount += 4;
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -30,7 +35,8 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.campers.items = action.payload;
+        state.items = action.payload;
+        console.log("Number of Campers after Load More:", state.items.length);
       })
       .addCase(fetchCampers.rejected, handleRejected)
       // .addCase(addContact.pending, handlePending)
@@ -52,5 +58,7 @@ const campersSlice = createSlice({
       // .addCase(deleteContact.rejected, handleRejected)
   }
 });
+
+export const { loadMore } = campersSlice.actions;
 
 export const campersReducer = campersSlice.reducer;

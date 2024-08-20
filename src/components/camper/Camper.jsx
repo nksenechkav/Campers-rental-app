@@ -5,7 +5,7 @@ import { BsStarFill } from "react-icons/bs";
 // import { deleteContact } from "../../redux/campers/operations";
 // import { useDispatch } from "react-redux";
 
-const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews, kitchen, beds}, onShowClick} ) => {
+const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds}, gallery, reviews,  }, onShowClick} ) => {
   // const dispatch = useDispatch();
 
   // const onDelete = () => dispatch(deleteContact(id));
@@ -14,7 +14,7 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
 
     const content = {
       modal: gallery,
-      name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews, kitchen, beds
+      name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds}, gallery, reviews
     };
 
     onShowClick(content);
@@ -38,6 +38,7 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
       <div className={css["wrapper-location"]}>
       <BsStarFill size={16} color="gold" />
       <p className={css.info}>{rating}</p>
+      <p className={css["info-reviews"]}>({reviews.length} Reviews)</p>
       </div>
       <div className={css["wrapper-location"]}>
       <svg className={css["my-icon"]} width="16" height="16"><use href="/public/icons.svg#icon-map-black"></use></svg>
