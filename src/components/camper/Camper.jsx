@@ -2,23 +2,44 @@
 
 import css from "./Camper.module.scss";
 import { BsStarFill } from "react-icons/bs";
+import CamperModal from '../../components/camperModal/CamperModal.jsx';
+import { useState } from "react";
 // import { deleteContact } from "../../redux/campers/operations";
 // import { useDispatch } from "react-redux";
 
-const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds}, gallery, reviews,  }, onShowClick} ) => {
+const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds}, gallery, reviews }} ) => {
   // const dispatch = useDispatch();
 
   // const onDelete = () => dispatch(deleteContact(id));
 
- function handleClick() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({});
 
+  function handleClick() {
     const content = {
-      modal: gallery,
-      name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds}, gallery, reviews
+      name,
+      gallery,
+      description,
     };
 
-    onShowClick(content);
+    setModalContent(content);
+    setIsModalOpen(true);
   }
+
+  // function openModal() {
+  //   setIsOpen(true);
+  // }
+
+  // function closeModal() {
+  //   setModalContent({});
+  //   setIsOpen(false);
+  // }
+
+  // function clickOpenModal(content) {
+  //   setModalContent(content);
+  //   openModal();
+  // }
+
   const formattedPrice = `€${price.toFixed(2)}`;
 
   return (
@@ -79,6 +100,11 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
       {/* <button className={css.btn} onClick={() => onDelete(id)}>
         Delete
       </button> */}
+     <CamperModal
+        isOpen={isModalOpen}
+        onRequestClose={() => setIsModalOpen(false)}
+        content={modalContent}
+      />
     </div>
   );
 };
