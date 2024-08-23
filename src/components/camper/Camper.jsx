@@ -17,9 +17,7 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
 
   function handleClick() {
     const content = {
-      name,
-      gallery,
-      description,
+      name, gallery, description,rating, reviews, location, formattedPrice
     };
 
     setModalContent(content);
