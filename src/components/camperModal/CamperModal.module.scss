@@ -1,15 +1,17 @@
+/* src/components/camperModal/CamperModal.module.scss */
+
 .modal-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 942px;
-  max-height: 90vh; /* Встановлює максимальну висоту модального вікна */
+  max-width: 982px;
+  max-height: 90vh; /* Максимальна висота модального вікна */
   border-radius: 20px;
-  padding: 40px;
+  padding: 40px 32px 40px 40px;
   background-color: white;
   outline: none;
-  overflow-y: auto; /* Додає вертикальну прокрутку, якщо контент перевищує висоту */
+  overflow: hidden; /* Забороняє прокручування модального вікна */
 }
 
 .modal-overlay {
@@ -19,41 +21,49 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  overflow: hidden;
+  overflow: hidden; /* Забороняє прокручування */
+}
+
+.modal-window {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-height: 80vh; /* Забезпечити, що є місце для прокрутки */
+  overflow-y: auto; /* Додає вертикальну прокрутку */
 }
 
 /* Стилізація полоски прокрутки */
-.modal-content::-webkit-scrollbar {
-  width: 8px; /* Ширина полоски прокрутки */
+.modal-inner::-webkit-scrollbar {
+  max-width: 8px; /* Ширина полоски прокрутки */
+  max-height: 264px;
   background: transparent; /* Фон для області прокрутки */
 }
 
-.modal-content::-webkit-scrollbar-thumb {
+.modal-inner::-webkit-scrollbar-thumb {
   background-color: #D9D9D9; /* Колір полоски прокрутки */
   border-radius: 7px; /* Скруглення кути полоски прокрутки */
 }
 
-.modal-content::-webkit-scrollbar-thumb:hover {
+.modal-inner::-webkit-scrollbar-thumb:hover {
   background-color: #c0c0c0; /* Колір полоски прокрутки при наведенні */
 }
 
-.modal-content::-webkit-scrollbar-button {
+.modal-inner::-webkit-scrollbar-button {
   display: none; /* Приховати кнопки прокрутки (верхню та нижню стрілки) */
 }
 
-/* Стилизация модального окна для сохранения отступа справа */
-.modal-content {
-  padding-right: 16px; /* Відступ справа для полоски прокрутки */
-  box-sizing: content-box; /* Забезпечує, що ширина модального вікна не змінюється через прокрутку */
+.modal-inner::-webkit-scrollbar-track {
+  margin: 100px; /* Відступи між треком і краями контейнера */
 }
 
-.modal-window {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 24px;
-}
 
 .header-wrapper {
   display: flex;
@@ -70,7 +80,7 @@
 }
 
 .name-wrapper {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
 }
 
@@ -103,21 +113,25 @@
 }
 
 .close-button {
-  display: block;
   position: absolute;
-  top: 40px;
-  right: 40px;
+  top: 16px;
+  right: 16px;
   background: none;
   border: none;
   cursor: pointer;
   color: #000;
+  z-index: 1000; /* Забезпечує, що кнопка буде поверх контенту */
+}
+
+.close-button:hover {
+  color: #D84343;
 }
 
 .modal-images {
-  max-width: 902px;
   display: flex;
   flex-direction: row;
   gap: 16px;
+  margin-top: 24px;
 }
 
 .image-wrapper {
@@ -131,27 +145,19 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: none; /* Забезпечує, що зображення буде масштабуватися та обрізатися відповідно до розміру контейнера */
-  object-position: center; /* Центрує зображення в межах контейнера */
+  object-fit: cover;
+  object-position: center;
 }
 
 .modal-text {
-  max-width: 902px;
-  min-height: 30px;
+  margin-top: 24px;
   background-color: navy;
   padding: 10px 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
   color: white;
   font-weight: 400;
 }
 
 .modal-element {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
   span {
     font-size: 16px;
   }
