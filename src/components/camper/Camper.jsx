@@ -23,21 +23,7 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
     setModalContent(content);
     setIsModalOpen(true);
   }
-
-  // function openModal() {
-  //   setIsOpen(true);
-  // }
-
-  // function closeModal() {
-  //   setModalContent({});
-  //   setIsOpen(false);
-  // }
-
-  // function clickOpenModal(content) {
-  //   setModalContent(content);
-  //   openModal();
-  // }
-
+  
   const formattedPrice = `€${price.toFixed(2)}`;
 
   return (

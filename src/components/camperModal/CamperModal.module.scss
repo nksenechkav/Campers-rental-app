@@ -8,7 +8,7 @@
   max-width: 982px;
   max-height: 90vh; /* Максимальна висота модального вікна */
   border-radius: 20px;
-  padding: 40px 32px 40px 40px;
+  padding: 40px;
   background-color: white;
   outline: none;
   overflow: hidden; /* Забороняє прокручування модального вікна */
@@ -24,48 +24,49 @@
   overflow: hidden; /* Забороняє прокручування */
 }
 
-.modal-window {
+.modal-content-inner {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: 926px;
+  padding-right: 16px;
+  max-height: 80vh; /* Забезпечити, що є місце для прокрутки */
+  overflow-y: auto; 
 }
 
-.modal-inner {
+
+.modal-window {
+  max-width: 902px;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-height: 80vh; /* Забезпечити, що є місце для прокрутки */
-  overflow-y: auto; /* Додає вертикальну прокрутку */
 }
 
+
 /* Стилізація полоски прокрутки */
-.modal-inner::-webkit-scrollbar {
+.modal-content-inner::-webkit-scrollbar {
   max-width: 8px; /* Ширина полоски прокрутки */
   max-height: 264px;
   background: transparent; /* Фон для області прокрутки */
 }
 
-.modal-inner::-webkit-scrollbar-thumb {
+.modal-content-inner::-webkit-scrollbar-thumb {
   background-color: #D9D9D9; /* Колір полоски прокрутки */
   border-radius: 7px; /* Скруглення кути полоски прокрутки */
 }
 
-.modal-inner::-webkit-scrollbar-thumb:hover {
+.modal-content-inner::-webkit-scrollbar-thumb:hover {
   background-color: #c0c0c0; /* Колір полоски прокрутки при наведенні */
 }
 
-.modal-inner::-webkit-scrollbar-button {
+.modal-content-inner::-webkit-scrollbar-button {
   display: none; /* Приховати кнопки прокрутки (верхню та нижню стрілки) */
 }
 
-.modal-inner::-webkit-scrollbar-track {
-  margin: 100px; /* Відступи між треком і краями контейнера */
+.modal-content-inner::-webkit-scrollbar-track {
+  margin-top: 150px; /* Відступи між треком і краями контейнера */
 }
 
-
 .header-wrapper {
+  max-width: 902px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -113,9 +114,6 @@
 }
 
 .close-button {
-  position: absolute;
-  top: 16px;
-  right: 16px;
   background: none;
   border: none;
   cursor: pointer;
@@ -131,7 +129,6 @@
   display: flex;
   flex-direction: row;
   gap: 16px;
-  margin-top: 24px;
 }
 
 .image-wrapper {
@@ -150,10 +147,7 @@
 }
 
 .modal-text {
-  margin-top: 24px;
-  background-color: navy;
-  padding: 10px 20px;
-  color: white;
+  color: #475467;
   font-weight: 400;
 }
 
@@ -161,4 +155,30 @@
   span {
     font-size: 16px;
   }
+}
+
+.additionals {
+  border-bottom: 1px solid #D9D9D9;
+   ul {
+     display: flex;
+     flex-direction: row;
+     gap: 40px;
+     font-size: 24px;
+     font-weight: 600;
+   }
+}
+
+.nav-link {
+  text-decoration: none; /* Прибирає підкреслювання */
+  color: inherit; /* Зберігає колір тексту */
+}
+
+.nav-link:hover {
+  text-decoration: underline; /* Підкреслення при наведенні, якщо потрібно */
+}
+
+.active {
+  border-bottom: 1px solid #D9D9D9;
+  text-decoration: underline; /* Підкреслення для активного посилання */
+  text-decoration-color: #E44848; /* Колір підкреслювання */
 }

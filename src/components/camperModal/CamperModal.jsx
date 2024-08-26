@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 import Modal from 'react-modal';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsStarFill } from 'react-icons/bs';
-import CustomScrollbar from '../customScrollbar/CustomScrollbar';
 import css from './CamperModal.module.scss';
+import Features from '../features/Features';
 
 Modal.setAppElement('#root');
 
@@ -31,13 +31,8 @@ const CamperModal = ({ content, isOpen, onRequestClose }) => {
       className={css['modal-content']}
       overlayClassName={css['modal-overlay']}
     >
-      <div className={css['modal-window']}>
-        <button className={css['close-button']} onClick={onRequestClose}>
-          <AiOutlineClose size={24} />
-        </button>
-
-        <CustomScrollbar>
-          <div className={css['modal-inner']}>
+      <div className={css['modal-content-inner']}>
+          <div className={css['modal-window']}>
             <div className={css['header-wrapper']}>
               <div className={css['info-wrapper']}>
                 <div className={css['name-wrapper']}>
@@ -60,6 +55,9 @@ const CamperModal = ({ content, isOpen, onRequestClose }) => {
                   <p className={css.info}>{formattedPrice}</p>
                 </div>
               </div>
+              <button className={css['close-button']} onClick={onRequestClose}>
+                    <AiOutlineClose size={24} />
+              </button>
             </div>
 
             <ul className={css['modal-images']}>
@@ -75,10 +73,15 @@ const CamperModal = ({ content, isOpen, onRequestClose }) => {
                 <span>{description}</span>
               </div>
             </div>
+            <div className={css['additionals']}>
+            <div className={css['tab-content']}>
+            <Features content={content} />
+            </div>
           </div>
-        </CustomScrollbar>
+      </div>
       </div>
     </Modal>
+    
   );
 };
 
