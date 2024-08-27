@@ -7,7 +7,7 @@ import { useState } from "react";
 // import { deleteContact } from "../../redux/campers/operations";
 // import { useDispatch } from "react-redux";
 
-const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds}, gallery, reviews }} ) => {
+const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds, airConditioner, CD, radio, bathroom, TV, shower, toilet, freezer, hob, microwave, gas, water}, gallery, reviews }} ) => {
   // const dispatch = useDispatch();
 
   // const onDelete = () => dispatch(deleteContact(id));
@@ -17,7 +17,7 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
 
   function handleClick() {
     const content = {
-      name, gallery, description,rating, reviews, location, formattedPrice
+      name, gallery, adults, engine, transmission, description, rating, reviews, location, kitchen, beds, airConditioner,CD, radio, bathroom, TV, shower, toilet, freezer, hob, microwave, gas, water, formattedPrice
     };
 
     setModalContent(content);

@@ -158,7 +158,7 @@
 }
 
 .additionals {
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 2px solid #D9D9D9;
    ul {
      display: flex;
      flex-direction: row;
@@ -170,15 +170,42 @@
 
 .nav-link {
   text-decoration: none; /* Прибирає підкреслювання */
-  color: inherit; /* Зберігає колір тексту */
-}
-
-.nav-link:hover {
-  text-decoration: underline; /* Підкреслення при наведенні, якщо потрібно */
+  background-color:#FFF;
+  border: none;
 }
 
 .active {
-  border-bottom: 1px solid #D9D9D9;
-  text-decoration: underline; /* Підкреслення для активного посилання */
-  text-decoration-color: #E44848; /* Колір підкреслювання */
+  border-bottom: 5px solid #E44848;
+  padding-bottom: 5px;
+  margin-bottom: -3px; /* Moves the border down without increasing the overall element height */
+}
+
+.info-services {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 16px;
+}
+.wrapper-services {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: #F2F4F7;
+  border-radius: 100px;
+}
+.my-icon {
+  display: inline-block;
+  fill: none;
+  stroke: black;
+  stroke-width: 1px;
+  max-height: 24px;
+}
+
+.my-icon-unique {
+  fill: black;
 }
