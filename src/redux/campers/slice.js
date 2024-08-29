@@ -13,16 +13,30 @@ const handleRejected = (state, action) => {
 };
 
 const initialCampers = {
-  campers: {
+  
     items: [],
     isLoading: false,
     error: null,
-  }
+    favourites: [],
+  
 }
 
 const campersSlice = createSlice({
   name: "campers",
   initialState: initialCampers,
+
+  reducers: {
+    addCamperToFavourites: (state, action) => {
+      const camperId = action.payload;
+      if (!state.favourites.includes(camperId)) {
+        state.favourites.push(camperId);
+      }
+    },
+    deleteCamperFromFavourites: (state, action) => {
+      const camperId = action.payload;
+      state.favourites = state.favourites.filter(id => id !== camperId);
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -30,27 +44,18 @@ const campersSlice = createSlice({
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.campers.items = action.payload;
+        state.items = action.payload;
       })
       .addCase(fetchCampers.rejected, handleRejected)
-      // .addCase(addContact.pending, handlePending)
-      // .addCase(addContact.fulfilled, (state, action) => {
+      // .addCase(fetchCampersById.pending, handlePending)
+      // .addCase(fetchCampersById.fulfilled, (state, action) => {
       //   state.isLoading = false;
       //   state.error = null;
-      //   state.contacts.items.push(action.payload);
+      //   state.campers.favourites = action.payload;
       // })
-      // .addCase(addContact.rejected, handleRejected)
-      // .addCase(deleteContact.pending, handlePending)
-      // .addCase(deleteContact.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   const index = state.contacts.items.findIndex(
-      //     (contact) => contact.id === action.payload.id
-      //   );
-      //   state.contacts.items.splice(index, 1);
-      // })
-      // .addCase(deleteContact.rejected, handleRejected)
+      // .addCase(fetchCampersById.rejected, handleRejected)
+    
   }
 });
-
+export const { addCamperToFavourites, deleteCamperFromFavourites } = campersSlice.actions;
 export const campersReducer = campersSlice.reducer;

@@ -1,5 +1,6 @@
 // src/components/bookingForm/BookingForm.jsx
 
+import { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
@@ -9,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import css from './BookingForm.module.scss';
 
 const BookingForm = () => {
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
+
   const initialValues = {
     name: '',
     email: '',
@@ -28,7 +31,6 @@ const BookingForm = () => {
       .nullable(),
     comment: Yup.string()
       .min(5, 'Comment is too short!')
-      .required('Comment is required'),
   });
 
   const onSubmit = (values, { resetForm }) => {
@@ -70,17 +72,34 @@ const BookingForm = () => {
 
             <div className={css['form-group']}>
               <div className={css['date-picker-wrapper']}>
-                <DatePicker
-                  id="bookingDate"
-                  selected={values.bookingDate}
-                  onChange={(date) => setFieldValue('bookingDate', date)}
-                  dateFormat="MMMM d, yyyy"
-                  placeholderText="Booking date"
-                  className={css['date-picker']}
+                <input
+                  type="text"
+                  value={values.bookingDate ? values.bookingDate.toLocaleDateString() : ''}
+                  readOnly
+                  placeholder="Booking date"
+                  onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
+                  className={css['date-picker-input']}
                 />
-                <svg className={css["my-icon"]} width="24" height="24">
+                <svg
+                  className={css["my-icon"]}
+                  width="24"
+                  height="24"
+                  onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
+                >
                   <use href="/public/icons.svg#icon-calendar"></use>
                 </svg>
+                {isDatePickerOpen && (
+                  <DatePicker
+                    selected={values.bookingDate}
+                    onChange={(date) => {
+                      setFieldValue('bookingDate', date);
+                      setIsDatePickerOpen(false);
+                    }}
+                    onClickOutside={() => setIsDatePickerOpen(false)}
+                    inline
+                    className={css['date-picker']}
+                  />
+                )}
               </div>
               <ErrorMessage name="bookingDate" component="div" className={css['error']} />
             </div>

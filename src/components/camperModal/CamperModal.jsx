@@ -7,7 +7,7 @@ import { BsStarFill } from 'react-icons/bs';
 import css from './CamperModal.module.scss';
 import FeaturesTab from '../FeaturesTab/FeaturesTab';
 import ReviewsTab from '../ReviewsTab/ReviewsTab';
-import BookingForm from '../BookingForm/BookingForm';
+import BookingForm from '../bookingForm/BookingForm';
 
 Modal.setAppElement('#root');
 
@@ -78,9 +78,7 @@ const CamperModal = ({ content, isOpen, onRequestClose }) => {
                 <span>{content.description}</span>
               </div>
           </div>
-
-          <div className={css['modal-body']}>
-            <div className={css['additionals']}>
+          <div className={css['additionals']}>
               <ul className={css['nav-links']}>
                 <li>
                   <button
@@ -100,6 +98,8 @@ const CamperModal = ({ content, isOpen, onRequestClose }) => {
                 </li>
               </ul>
             </div>
+          <div className={css['modal-body']}>
+            
             <div className={css['tab-content-wrapper']}>
               <div className={css['tab-content']}>
                 {activeTab === 'features' && <FeaturesTab content={content} />}

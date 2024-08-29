@@ -4,20 +4,29 @@ import css from "./Camper.module.scss";
 import { BsStarFill } from "react-icons/bs";
 import CamperModal from '../../components/camperModal/CamperModal.jsx';
 import { useState } from "react";
-// import { deleteContact } from "../../redux/campers/operations";
-// import { useDispatch } from "react-redux";
+import { addCamperToFavourites, deleteCamperFromFavourites } from "../../redux/campers/slice.js";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavouritesCampers } from "../../redux/campers/selectors.js";
 
-const Camper = ( {camper: {name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds, airConditioner, CD, radio, bathroom, TV, shower, toilet, freezer, hob, microwave, gas, water}, gallery, reviews }} ) => {
-  // const dispatch = useDispatch();
+const Camper = ( {camper: {_id, name, price, rating, location, adults, engine, transmission, form, length, width, height, tank, consumption, description, details: {kitchen, beds, airConditioner, CD, radio, bathroom, TV, shower, toilet, freezer, hob, microwave, gas, water}, gallery, reviews }} ) => {
 
-  // const onDelete = () => dispatch(deleteContact(id));
+  const dispatch = useDispatch();
+  const favouritesCampers = useSelector(selectFavouritesCampers) || [];
+  const isFavourite = favouritesCampers.some(favCamper => favCamper._id === _id);
 
+  const handleFavouriteClick = () => {
+    if (isFavourite) {
+      dispatch(deleteCamperFromFavourites(_id));
+    } else {
+      dispatch(addCamperToFavourites(_id));
+    }
+  };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({});
 
   function handleClick() {
     const content = {
-      name, gallery, adults, engine, transmission, description, rating, reviews, location, kitchen, beds, airConditioner,CD, radio, bathroom, TV, shower, toilet, freezer, hob, microwave, gas, water, formattedPrice
+      name, gallery, adults, engine, transmission, description, rating, reviews, location, kitchen, beds, airConditioner,CD, radio, bathroom, TV, shower, toilet, freezer, hob, microwave, gas, water, formattedPrice, form, length, width, height, tank, consumption
     };
 
     setModalContent(content);
@@ -36,7 +45,14 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
       <p className={css.info}>{name}</p>
       <div className={css["wrapper-header"]}>
       <p className={css.info}>{formattedPrice}</p>
-      <svg className={css["my-icon"]} width="24" height="24"><use href="/public/icons.svg#icon-heart-black"></use></svg>
+      <button
+              className={`${css["favourites-btn"]} ${isFavourite ? css["favourites-btn-active"] : ""}`}
+              onClick={handleFavouriteClick}
+            >
+              <svg className={`${css["my-icon"]} ${isFavourite ? css["my-icon-active"] : ""}`} width="24" height="24">
+                <use href={isFavourite ? "/public/icons.svg#icon-heart-red" : "/public/icons.svg#icon-heart-black"}></use>
+              </svg>
+            </button>
       </div>
       </div>
       <div className={css["info-location"]}>
@@ -81,9 +97,6 @@ const Camper = ( {camper: {name, price, rating, location, adults, children, engi
         Show more
       </button>
       </div>
-      {/* <button className={css.btn} onClick={() => onDelete(id)}>
-        Delete
-      </button> */}
      <CamperModal
         isOpen={isModalOpen}
         onRequestClose={() => setIsModalOpen(false)}

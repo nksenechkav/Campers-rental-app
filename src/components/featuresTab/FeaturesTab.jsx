@@ -6,7 +6,7 @@ const FeaturesTab = ({ content }) => {
   return (
     <div className={css['features']}>
       <ul className={css["info-services"]}>
-        {content.adults && (
+        {content.adults > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon-unique"]} width="20" height="20">
               <use href="/public/icons.svg#icon-users"></use>
@@ -22,12 +22,6 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.transmission}</p>
           </li>
         )}
-         <li className={css["wrapper-services"]}>
-            <svg className={css["my-icon"]} width="20" height="20">
-              <use href="/public/icons.svg#icon-AC"></use>
-            </svg>
-            <p className={css.info}>AC</p>
-          </li>
         {content.engine && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon-unique"]} width="20" height="20">
@@ -36,7 +30,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.engine}</p>
           </li>
         )}
-        {content.kitchen && (
+        {content.kitchen > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-kitchen"></use>
@@ -44,7 +38,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.kitchen} kitchen</p>
           </li>
         )}
-        {content.beds && (
+        {content.beds > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-beds"></use>
@@ -52,7 +46,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.beds} beds</p>
           </li>
         )}
-        {content.airConditioner && (
+        {content.airConditioner > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-air-conditioner"></use>
@@ -60,15 +54,15 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.airConditioner} air conditioner</p>
           </li>
         )}
-        {content.CD && (
+        {content.CD > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-CD"></use>
             </svg>
-            <p className={css.info}>{content.CDr} CD</p>
+            <p className={css.info}>{content.CD} CD</p>
           </li>
         )}
-        {content.radio && (
+        {content.radio > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-radio"></use>
@@ -76,7 +70,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.radio} radio</p>
           </li>
         )}
-        {content.TV && (
+        {content.TV > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-TV"></use>
@@ -84,7 +78,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.TV} TV</p>
           </li>
         )}
-        {content.shower && (
+        {content.shower > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-beds"></use>
@@ -92,7 +86,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.shower} shower</p>
           </li>
         )}
-        {content.toilet && (
+        {content.toilet > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon-unique"]} width="20" height="20">
               <use href="/public/icons.svg#icon-toilet"></use>
@@ -100,7 +94,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.toilet} toilet</p>
           </li>
         )}
-        {content.freezer && (
+        {content.freezer > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-freezer"></use>
@@ -108,7 +102,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.freezer} freezer</p>
           </li>
         )}
-        {content.hob && (
+        {content.hob > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-hob"></use>
@@ -116,7 +110,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.hob} hob</p>
           </li>
         )}
-        {content.microwave && (
+        {content.microwave > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-microwave"></use>
@@ -124,7 +118,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.microwave} microwave</p>
           </li>
         )}
-         {content.gas && (
+         {content.gas > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon-unique"]} width="20" height="20">
               <use href="/public/icons.svg#icon-gas"></use>
@@ -132,7 +126,7 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.gas} gas</p>
           </li>
         )}
-         {content.water && (
+         {content.water > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
               <use href="/public/icons.svg#icon-water"></use>
@@ -141,6 +135,49 @@ const FeaturesTab = ({ content }) => {
           </li>
         )}
       </ul>
+
+      {/* Vehicle details section */}
+      <div className={css['vehicle-details']}>
+        <p className={css['vehicle-details-header']}>Vehicle Details</p>
+        <ul className={css["vehicle-info"]}>
+    {content.form && (
+      <li className={css["vehicle-item"]}>
+        <span className={css["vehicle-property"]}>Form:</span>
+        <span className={css["vehicle-value"]}>{content.form}</span>
+      </li>
+    )}
+    {content.length && (
+      <li className={css["vehicle-item"]}>
+        <span className={css["vehicle-property"]}>Length:</span>
+        <span className={css["vehicle-value"]}>{content.length}</span>
+      </li>
+    )}
+    {content.width && (
+      <li className={css["vehicle-item"]}>
+        <span className={css["vehicle-property"]}>Width:</span>
+        <span className={css["vehicle-value"]}>{content.width}</span>
+      </li>
+    )}
+    {content.height && (
+      <li className={css["vehicle-item"]}>
+        <span className={css["vehicle-property"]}>Height:</span>
+        <span className={css["vehicle-value"]}>{content.height}</span>
+      </li>
+    )}
+    {content.trunk && (
+      <li className={css["vehicle-item"]}>
+        <span className={css["vehicle-property"]}>Trunk:</span>
+        <span className={css["vehicle-value"]}>{content.trunk}</span>
+      </li>
+    )}
+    {content.consumption && (
+      <li className={css["vehicle-item"]}>
+        <span className={css["vehicle-property"]}>Consumption:</span>
+        <span className={css["vehicle-value"]}>{content.consumption}</span>
+      </li>
+    )}
+  </ul>
+      </div>
     </div>
   );
 };

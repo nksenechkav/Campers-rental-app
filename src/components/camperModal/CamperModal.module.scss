@@ -157,29 +157,6 @@
   }
 }
 
-.additionals {
-  border-bottom: 2px solid #D9D9D9;
-   ul {
-     display: flex;
-     flex-direction: row;
-     gap: 40px;
-     font-size: 24px;
-     font-weight: 600;
-   }
-}
-
-.nav-link {
-  text-decoration: none; /* Прибирає підкреслювання */
-  background-color:#FFF;
-  border: none;
-}
-
-.active {
-  border-bottom: 5px solid #E44848;
-  padding-bottom: 5px;
-  margin-bottom: -3px; /* Moves the border down without increasing the overall element height */
-}
-
 .info-services {
   display: flex;
   flex-direction: row;
@@ -211,10 +188,35 @@
 }
 
 
+.additionals {
+  border-bottom: 2px solid #D9D9D9;
+  margin-bottom: 24px;
+   ul {
+     width: 902px;
+     height: 48px;
+     display: flex;
+     flex-direction: row;
+     gap: 40px;
+     font-size: 24px;
+     font-weight: 600;
+   }
+}
+.nav-link {
+  text-decoration: none; /* Прибирає підкреслювання */
+  background-color:#FFF;
+  border: none;
+}
+
+.active {
+  border-bottom: 5px solid #E44848;
+  padding-bottom: 15px;
+  margin-bottom: -5px; /* Moves the border down without increasing the overall element height */
+}
 .modal-body {
   width: 902px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 24px;
 }
 
 .tab-content-wrapper {
