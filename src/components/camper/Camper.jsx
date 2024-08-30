@@ -90,7 +90,7 @@ const Camper = ( {camper: {_id, name, price, rating, location, adults, engine, t
       </div>
       <div className={css["wrapper-services"]}>
         <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-AC"></use></svg>
-        <p className={css.info}>AC</p>
+        <p className={css.info}>{airConditioner} AC</p>
       </div>
       </div>
       <button className={css.btn} onClick={handleClick}>

@@ -22,6 +22,14 @@ const FeaturesTab = ({ content }) => {
             <p className={css.info}>{content.transmission}</p>
           </li>
         )}
+        {content.airConditioner > 0 && (
+          <li className={css["wrapper-services"]}>
+            <svg className={css["my-icon"]} width="20" height="20">
+              <use href="/public/icons.svg#icon-AC"></use>
+            </svg>
+            <p className={css.info}>{content.airConditioner} AC</p>
+          </li>
+        )}
         {content.engine && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon-unique"]} width="20" height="20">

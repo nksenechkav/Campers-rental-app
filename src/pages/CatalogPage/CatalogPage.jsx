@@ -9,8 +9,9 @@ import { fetchCampers } from '../../redux/campers/operations.js';
 import { selectIsLoading, selectError, selectCampers } from '../../redux/campers/selectors.js';
 import LoaderComponent from '../../components/loader/Loader.jsx';
 import ErrorMessage from '../../components/error/ErrorMessage.jsx';
-// import SearchBox from '../../components/searchBox/SearchBox.jsx';
+import SearchBox from '../../components/searchBox/SearchBox.jsx';
 import CamperList from '../../components/camperList/CamperList.jsx';
+import css from './CatalogPage.module.scss';
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -23,12 +24,12 @@ export default function CatalogPage() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={css["catalog-page-container"]}>
       <DocumentTitle>Catalog</DocumentTitle>
-      {/* <SearchBox/> */}
+      <SearchBox/>
       {isLoading && <LoaderComponent />}
       {error && <ErrorMessage />}
       <CamperList campers={campers} /> {/* Передаємо всі кемпери */}
-    </>
+    </div>
   );
 }

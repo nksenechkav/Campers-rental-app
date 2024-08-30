@@ -26,8 +26,8 @@ const CamperList = ({ campers }) => {
             <Camper camper={camper} />
           </li>
         ))}
+        {hasMoreItems && <LoadMoreBtn onClick={handleLoadMore} />}
       </ul>
-      {hasMoreItems && <LoadMoreBtn onClick={handleLoadMore} />}
     </>
   );
 };
