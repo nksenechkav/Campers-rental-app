@@ -13,7 +13,6 @@ const handleRejected = (state, action) => {
 };
 
 const initialCampers = {
-  
     items: [],
     isLoading: false,
     error: null,
@@ -47,14 +46,6 @@ const campersSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(fetchCampers.rejected, handleRejected)
-      // .addCase(fetchCampersById.pending, handlePending)
-      // .addCase(fetchCampersById.fulfilled, (state, action) => {
-      //   state.isLoading = false;
-      //   state.error = null;
-      //   state.campers.favourites = action.payload;
-      // })
-      // .addCase(fetchCampersById.rejected, handleRejected)
-    
   }
 });
 export const { addCamperToFavourites, deleteCamperFromFavourites } = campersSlice.actions;
