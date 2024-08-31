@@ -1,5 +1,5 @@
 .searchBox {
-  max-width: 360px;
+  width: 360px;
 }
 
 .label {
@@ -14,13 +14,14 @@
   color: #475467;
   font-weight: 400;
   margin-top: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .label-header {
   color: #101828;
   font-size: 24px;
-  margin-bottom: 24px;
+  padding-bottom: 24px;
+  margin-bottom: -12px;
   border-bottom: 1px solid #D9D9D9;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .searchField {
-  max-height: 56px;
+  height: 56px;
   font-size: 16px;
   color: #101828;
   font-weight: 400;
@@ -44,7 +45,7 @@
 .my-icon {
   position: absolute;
   left: 10px;
-  top: 50%;
+  top: 65%;
   transform: translateY(-50%);
   pointer-events: none;
   fill: none;
@@ -63,7 +64,8 @@ input:focus {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 24px;
+  margin-top: 36px;
+  margin-bottom: 24px;
 }
 
 .wrapper-services {
@@ -74,7 +76,6 @@ input:focus {
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
   transition: border 0.3s ease;
 }
 
@@ -84,8 +85,9 @@ input:focus {
 
 .checkbox-label {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 8px;
   width: 100%;
   height: 100%;
   cursor: pointer;
@@ -117,4 +119,34 @@ input:focus {
 
 .checked {
   border: 1px solid #E44848;
+}
+
+.radio-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 36px;
+  margin-bottom: 24px;
+}
+
+.radio-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.radio-icon-unique {
+  display: inline-block;
+  fill: #101828;
+  height: 28px;
+  width: 40px;
+}
+
+.radio-input {
+  display: none; // Сховати стандартний чекбокс
 }

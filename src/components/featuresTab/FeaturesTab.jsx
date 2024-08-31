@@ -89,7 +89,7 @@ const FeaturesTab = ({ content }) => {
         {content.shower > 0 && (
           <li className={css["wrapper-services"]}>
             <svg className={css["my-icon"]} width="20" height="20">
-              <use href="/public/icons.svg#icon-beds"></use>
+              <use href="/public/icons.svg#icon-shower"></use>
             </svg>
             <p className={css.info}>{content.shower} shower</p>
           </li>

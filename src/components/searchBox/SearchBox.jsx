@@ -1,13 +1,15 @@
-import { changeFilter } from '../../redux/filters/slice.js';
+// src/pages/searchBox/SearchBox.jsx
+
+import { changeFilter, toggleEquipment, changeVehicleType } from '../../redux/filters/slice.js';
 import css from './SearchBox.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectNameFilter } from '../../redux/filters/selectors.js';
-import { useState } from 'react';
+import { selectLocationFilter, selectEquipmentFilters, selectVehicleTypeFilter } from '../../redux/filters/selectors.js';
 
 const SearchBox = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(selectNameFilter);
-  const [checkedItems, setCheckedItems] = useState({});
+  const filter = useSelector(selectLocationFilter);
+  const equipmentFilters = useSelector(selectEquipmentFilters);
+  const selectedVehicleType = useSelector(selectVehicleTypeFilter);
 
   const handleChange = (e) => {
     const newValue = e.target.value;
@@ -16,7 +18,12 @@ const SearchBox = () => {
 
   const handleCheckboxChange = (event) => {
     const { id, checked } = event.target;
-    setCheckedItems((prev) => ({ ...prev, [id]: checked }));
+    dispatch(toggleEquipment({ equipmentId: id, checked })); // Оновлення Redux store
+  };
+
+  const handleRadioChange = (event) => {
+    const { id } = event.target;
+    dispatch(changeVehicleType(id)); // Оновлення Redux store
   };
 
   return (
@@ -38,26 +45,65 @@ const SearchBox = () => {
       <h2 className={css["label-header"]}>Vehicle Equipment</h2>
       <div className={css["checkbox-list"]}>
         {[
-          { id: 'users-checkbox', icon: 'icon-users', text: 'Adults' },
-          { id: 'automatic-checkbox', icon: 'icon-automatic', text: 'Automatic' },
-          { id: 'petrol-checkbox', icon: 'icon-petrol', text: 'Engine' },
-          { id: 'kitchen-checkbox', icon: 'icon-kitchen', text: 'Kitchen' },
-          { id: 'beds-checkbox', icon: 'icon-beds', text: 'Beds' },
-          { id: 'ac-checkbox', icon: 'icon-AC', text: 'AC' },
-        ].map(({ id, icon, text }) => (
+          { id: 'users-checkbox', icon: 'icon-users', text: 'Adults', iconClass: 'checkbox-icon-unique' },
+          { id: 'automatic-checkbox', icon: 'icon-automatic', text: 'Automatic', iconClass: 'checkbox-icon' },
+          { id: 'petrol-checkbox', icon: 'icon-petrol', text: 'Engine', iconClass: 'checkbox-icon-unique' },
+          { id: 'kitchen-checkbox', icon: 'icon-kitchen', text: 'Kitchen', iconClass: 'checkbox-icon' },
+          { id: 'beds-checkbox', icon: 'icon-beds', text: 'Beds', iconClass: 'checkbox-icon' },
+          { id: 'ac-checkbox', icon: 'icon-AC', text: 'AC', iconClass: 'checkbox-icon' },
+          { id: 'air-conditioner-checkbox', icon: 'icon-air-conditioner', text: 'Air Conditioner', iconClass: 'checkbox-icon' },
+          { id: 'cd-checkbox', icon: 'icon-CD', text: 'CD', iconClass: 'checkbox-icon' },
+          { id: 'radio-checkbox', icon: 'icon-radio', text: 'Radio', iconClass: 'checkbox-icon' },
+          { id: 'tv-checkbox', icon: 'icon-TV', text: 'TV', iconClass: 'checkbox-icon' },
+          { id: 'shower-checkbox', icon: 'icon-shower', text: 'Shower', iconClass: 'checkbox-icon' },
+          { id: 'toilet-checkbox', icon: 'icon-toilet', text: 'Toilet', iconClass: 'checkbox-icon-unique' },
+          { id: 'freezer-checkbox', icon: 'icon-freezer', text: 'Freezer', iconClass: 'checkbox-icon' },
+          { id: 'hob-checkbox', icon: 'icon-hob', text: 'Hob', iconClass: 'checkbox-icon' },
+          { id: 'microwave-checkbox', icon: 'icon-microwave', text: 'Microwave', iconClass: 'checkbox-icon' },
+          { id: 'gas-checkbox', icon: 'icon-gas', text: 'Gas', iconClass: 'checkbox-icon-unique' },
+          { id: 'water-checkbox', icon: 'icon-water', text: 'Water', iconClass: 'checkbox-icon' },
+        ].map(({ id, icon, text, iconClass }) => (
           <div
             key={id}
-            className={`${css["wrapper-services"]} ${checkedItems[id] ? css["checked"] : ''}`}
+            className={`${css["wrapper-services"]} ${equipmentFilters[id] ? css["checked"] : ''}`}
           >
             <input
               type="checkbox"
               id={id}
               className={css["checkbox-input"]}
-              checked={checkedItems[id] || false}
+              checked={equipmentFilters[id] || false}
               onChange={handleCheckboxChange}
             />
             <label htmlFor={id} className={css["checkbox-label"]}>
-              <svg className={checkedItems[id] ? css["checkbox-icon"] : css["checkbox-icon"]} width="20" height="20">
+              <svg className={css[iconClass]} width="32" height="32">
+                <use href={`/public/icons.svg#${icon}`}></use>
+              </svg>
+              <p className={css.info}>{text}</p>
+            </label>
+          </div>
+        ))}
+      </div>
+      <h2 className={css["label-header"]}>Vehicle Type</h2>
+      <div className={css["radio-list"]}>
+        {[
+          { id: 'van-radio', icon: 'icon-van', text: 'Van', iconClass: 'radio-icon-unique' },
+          { id: 'fully-integrated-radio', icon: 'icon-fully-integrated', text: 'Fully Integrated', iconClass: 'radio-icon-unique' },
+          { id: 'alcove-radio', icon: 'icon-alcove', text: 'Alcove', iconClass: 'radio-icon-unique' },
+        ].map(({ id, icon, text, iconClass }) => (
+          <div
+            key={id}
+            className={`${css["wrapper-services"]} ${selectedVehicleType === id ? css["checked"] : ''}`}
+          >
+            <input
+              type="radio"
+              id={id}
+              name="vehicleType"
+              className={css["radio-input"]}
+              checked={selectedVehicleType === id}
+              onChange={handleRadioChange}
+            />
+            <label htmlFor={id} className={css["radio-label"]}>
+              <svg className={css[iconClass]} width="40" height="28">
                 <use href={`/public/icons.svg#${icon}`}></use>
               </svg>
               <p className={css.info}>{text}</p>
