@@ -6,7 +6,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { BsStarFill } from 'react-icons/bs';
 import css from './CamperModal.module.scss';
 import FeaturesTab from '../FeaturesTab/FeaturesTab';
-import ReviewsTab from '../ReviewsTab/ReviewsTab';
+import ReviewsTab from '../reviewsTab/ReviewsTab';
 import BookingForm from '../bookingForm/BookingForm';
 
 Modal.setAppElement('#root');
