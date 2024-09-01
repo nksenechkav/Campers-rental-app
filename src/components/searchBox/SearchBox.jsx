@@ -31,7 +31,7 @@ const SearchBox = () => {
       <div className={css.inputWrapper}>
         <p className={css.label}>Location</p>
         <svg className={css["my-icon"]} width="16" height="16">
-          <use href="/public/icons.svg#icon-map-black"></use>
+          <use href="/icons.svg#icon-map-black"></use>
         </svg>
         <input
           className={css.searchField}
@@ -76,7 +76,7 @@ const SearchBox = () => {
             />
             <label htmlFor={id} className={css["checkbox-label"]}>
               <svg className={css[iconClass]} width="32" height="32">
-                <use href={`/public/icons.svg#${icon}`}></use>
+                <use href={`/icons.svg#${icon}`}></use>
               </svg>
               <p className={css.info}>{text}</p>
             </label>
@@ -104,7 +104,7 @@ const SearchBox = () => {
             />
             <label htmlFor={id} className={css["radio-label"]}>
               <svg className={css[iconClass]} width="40" height="28">
-                <use href={`/public/icons.svg#${icon}`}></use>
+                <use href={`/icons.svg#${icon}`}></use>
               </svg>
               <p className={css.info}>{text}</p>
             </label>

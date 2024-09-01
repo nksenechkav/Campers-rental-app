@@ -21,7 +21,7 @@ export default function HomePage() {
               TravelTrucks
             </h1>
           </Link>
-          <img src="../../../public/camper.png" alt="camping trip" className={css.image} />
+          <img src="../../../camper.png" alt="camping trip" className={css.image} />
         </div>
 
       </div>

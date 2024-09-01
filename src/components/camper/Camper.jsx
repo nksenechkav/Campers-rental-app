@@ -50,7 +50,7 @@ const Camper = ( {camper: {_id, name, price, rating, location, adults, engine, t
               onClick={handleFavouriteClick}
             >
               <svg className={`${css["my-icon"]} ${isFavourite ? css["my-icon-active"] : ""}`} width="24" height="24">
-                <use href={isFavourite ? "/public/icons.svg#icon-heart-red" : "/public/icons.svg#icon-heart-black"}></use>
+                <use href={isFavourite ? "/icons.svg#icon-heart-red" : "/icons.svg#icon-heart-black"}></use>
               </svg>
             </button>
       </div>
@@ -62,34 +62,34 @@ const Camper = ( {camper: {_id, name, price, rating, location, adults, engine, t
       <p className={css["info-reviews"]}>({reviews.length} Reviews)</p>
       </div>
       <div className={css["wrapper-location"]}>
-      <svg className={css["my-icon"]} width="16" height="16"><use href="/public/icons.svg#icon-map-black"></use></svg>
+      <svg className={css["my-icon"]} width="16" height="16"><use href="/icons.svg#icon-map-black"></use></svg>
       <p className={css.info}>{location}</p>
       </div>
       </div>
       <p className={css["info-description"]}>{description}</p>
       <div className={css["info-services"]}>
       <div className={css["wrapper-services"]}>
-        <svg className={css["my-icon-unique"]} width="20" height="20"><use href="/public/icons.svg#icon-users"></use></svg>
+        <svg className={css["my-icon-unique"]} width="20" height="20"><use href="/icons.svg#icon-users"></use></svg>
         <p className={css.info}>{adults} adults</p>
       </div>
       <div className={css["wrapper-services"]}>
-        <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-automatic"></use></svg>
+        <svg className={css["my-icon"]} width="20" height="20"><use href="/icons.svg#icon-automatic"></use></svg>
         <p className={css.info}>{transmission}</p>
       </div>
       <div className={css["wrapper-services"]}>
-        <svg className={css["my-icon-unique"]} width="20" height="20"><use href="/public/icons.svg#icon-petrol"></use></svg>
+        <svg className={css["my-icon-unique"]} width="20" height="20"><use href="/icons.svg#icon-petrol"></use></svg>
         <p className={css.info}>{engine}</p>
       </div>
       <div className={css["wrapper-services"]}>
-        <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-kitchen"></use></svg>
+        <svg className={css["my-icon"]} width="20" height="20"><use href="/icons.svg#icon-kitchen"></use></svg>
         <p className={css.info}>{kitchen} kitchen</p>
       </div>
       <div className={css["wrapper-services"]}>
-        <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-beds"></use></svg>
+        <svg className={css["my-icon"]} width="20" height="20"><use href="/icons.svg#icon-beds"></use></svg>
         <p className={css.info}>{beds} beds</p>
       </div>
       <div className={css["wrapper-services"]}>
-        <svg className={css["my-icon"]} width="20" height="20"><use href="/public/icons.svg#icon-AC"></use></svg>
+        <svg className={css["my-icon"]} width="20" height="20"><use href="/icons.svg#icon-AC"></use></svg>
         <p className={css.info}>{airConditioner} AC</p>
       </div>
       </div>

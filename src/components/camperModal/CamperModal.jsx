@@ -52,7 +52,7 @@ const CamperModal = ({ content, isOpen, onRequestClose }) => {
                 </li>
                 <li className={css['wrapper-location']}>
                   <svg className={css['my-icon']} width="16" height="16">
-                    <use href="/public/icons.svg#icon-map-black"></use>
+                    <use href="/icons.svg#icon-map-black"></use>
                   </svg>
                   <p className={css.info}>{content.location}</p>
                 </li>

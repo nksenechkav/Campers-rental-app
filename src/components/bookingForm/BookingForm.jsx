@@ -86,7 +86,7 @@ const BookingForm = () => {
                   height="24"
                   onClick={() => setIsDatePickerOpen(!isDatePickerOpen)}
                 >
-                  <use href="/public/icons.svg#icon-calendar"></use>
+                  <use href="/icons.svg#icon-calendar"></use>
                 </svg>
                 {isDatePickerOpen && (
                   <DatePicker
