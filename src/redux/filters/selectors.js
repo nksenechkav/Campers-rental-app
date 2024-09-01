@@ -13,22 +13,41 @@ export const selectFilteredCampers = createSelector(
     const normalizedFilter = locationFilter.toLowerCase().trim();
 
     return campers.filter(camper => {
+      // Фільтрація по локації
       const matchesLocation = normalizedFilter ? 
         camper.location.toLowerCase().includes(normalizedFilter) : 
         true;
 
+      // Фільтрація по обладнанню
       const matchesEquipment = Object.entries(equipmentFilters).every(([equipmentId, checked]) => {
         if (checked) {
           const key = equipmentId.replace("-checkbox", "");
-          return camper.details?.[key] && camper.details[key] !== 0;
+          const camperValue = camper[key] || (camper.details && camper.details[key]);
+
+          // Перевірка, якщо значення є числом або рядком
+          if (typeof camperValue === 'number') {
+            return camperValue > 0; // Перевірка для чисел
+          } else if (typeof camperValue === 'string') {
+            return camperValue.trim() !== ''; // Перевірка для рядків
+          }
+
+          // Якщо значення undefined або інший тип, виключити цей кемпер
+          return false;
         }
         return true;
       });
 
-      const matchesVehicleType = vehicleTypeFilter ? 
-        camper.form === vehicleTypeFilter : 
-        true;
+      // Фільтрація по типу транспортного засобу
+      const normalizedVehicleType = vehicleTypeFilter 
+      ? vehicleTypeFilter.replace('-radio', '') 
+      : '';
 
+    const matchesVehicleType = normalizedVehicleType 
+      ? camper.form === normalizedVehicleType 
+      : true;
+
+
+      // Повертаємо true, якщо camper відповідає всім умовам
       return matchesLocation && matchesEquipment && matchesVehicleType;
     });
   }

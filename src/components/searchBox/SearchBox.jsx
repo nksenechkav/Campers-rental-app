@@ -43,18 +43,18 @@ const SearchBox = () => {
       </div>
       <p className={css["label-text"]}>Filters</p>
       <h2 className={css["label-header"]}>Vehicle Equipment</h2>
-      <div className={css["checkbox-list"]}>
+      <ul className={css["checkbox-list"]}>
         {[
-          { id: 'users-checkbox', icon: 'icon-users', text: 'Adults', iconClass: 'checkbox-icon-unique' },
-          { id: 'automatic-checkbox', icon: 'icon-automatic', text: 'Automatic', iconClass: 'checkbox-icon' },
-          { id: 'petrol-checkbox', icon: 'icon-petrol', text: 'Engine', iconClass: 'checkbox-icon-unique' },
+          { id: 'adults-checkbox', icon: 'icon-users', text: 'Adults', iconClass: 'checkbox-icon-unique' },
+          { id: 'transmission-checkbox', icon: 'icon-automatic', text: 'Automatic', iconClass: 'checkbox-icon' },
+          { id: 'engine-checkbox', icon: 'icon-petrol', text: 'Engine', iconClass: 'checkbox-icon-unique' },
           { id: 'kitchen-checkbox', icon: 'icon-kitchen', text: 'Kitchen', iconClass: 'checkbox-icon' },
           { id: 'beds-checkbox', icon: 'icon-beds', text: 'Beds', iconClass: 'checkbox-icon' },
-          { id: 'ac-checkbox', icon: 'icon-AC', text: 'AC', iconClass: 'checkbox-icon' },
-          { id: 'air-conditioner-checkbox', icon: 'icon-air-conditioner', text: 'Air Conditioner', iconClass: 'checkbox-icon' },
-          { id: 'cd-checkbox', icon: 'icon-CD', text: 'CD', iconClass: 'checkbox-icon' },
+          // { id: 'airConditioner-checkbox', icon: 'icon-AC', text: 'AC', iconClass: 'checkbox-icon' },
+          { id: 'airConditioner-checkbox', icon: 'icon-air-conditioner', text: 'Air Conditioner', iconClass: 'checkbox-icon' },
+          { id: 'CD-checkbox', icon: 'icon-CD', text: 'CD', iconClass: 'checkbox-icon' },
           { id: 'radio-checkbox', icon: 'icon-radio', text: 'Radio', iconClass: 'checkbox-icon' },
-          { id: 'tv-checkbox', icon: 'icon-TV', text: 'TV', iconClass: 'checkbox-icon' },
+          { id: 'TV-checkbox', icon: 'icon-TV', text: 'TV', iconClass: 'checkbox-icon' },
           { id: 'shower-checkbox', icon: 'icon-shower', text: 'Shower', iconClass: 'checkbox-icon' },
           { id: 'toilet-checkbox', icon: 'icon-toilet', text: 'Toilet', iconClass: 'checkbox-icon-unique' },
           { id: 'freezer-checkbox', icon: 'icon-freezer', text: 'Freezer', iconClass: 'checkbox-icon' },
@@ -63,7 +63,7 @@ const SearchBox = () => {
           { id: 'gas-checkbox', icon: 'icon-gas', text: 'Gas', iconClass: 'checkbox-icon-unique' },
           { id: 'water-checkbox', icon: 'icon-water', text: 'Water', iconClass: 'checkbox-icon' },
         ].map(({ id, icon, text, iconClass }) => (
-          <div
+          <li
             key={id}
             className={`${css["wrapper-services"]} ${equipmentFilters[id] ? css["checked"] : ''}`}
           >
@@ -80,17 +80,17 @@ const SearchBox = () => {
               </svg>
               <p className={css.info}>{text}</p>
             </label>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <h2 className={css["label-header"]}>Vehicle Type</h2>
-      <div className={css["radio-list"]}>
+      <ul className={css["radio-list"]}>
         {[
-          { id: 'van-radio', icon: 'icon-van', text: 'Van', iconClass: 'radio-icon-unique' },
-          { id: 'fully-integrated-radio', icon: 'icon-fully-integrated', text: 'Fully Integrated', iconClass: 'radio-icon-unique' },
+          { id: 'panelTruck-radio', icon: 'icon-van', text: 'Van', iconClass: 'radio-icon-unique' },
+          { id: 'fullyIntegrated-radio', icon: 'icon-fully-integrated', text: 'Fully Integrated', iconClass: 'radio-icon-unique' },
           { id: 'alcove-radio', icon: 'icon-alcove', text: 'Alcove', iconClass: 'radio-icon-unique' },
         ].map(({ id, icon, text, iconClass }) => (
-          <div
+          <li
             key={id}
             className={`${css["wrapper-services"]} ${selectedVehicleType === id ? css["checked"] : ''}`}
           >
@@ -108,9 +108,9 @@ const SearchBox = () => {
               </svg>
               <p className={css.info}>{text}</p>
             </label>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

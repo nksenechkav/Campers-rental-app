@@ -14,7 +14,6 @@ export default function FavouritesPage() {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const favouritesCampers = useSelector(selectFavouritesCampers);
-  console.log(favouritesCampers);
   
   return (
     <div className={css["favourites-page-container"]}>
@@ -25,7 +24,7 @@ export default function FavouritesPage() {
       {favouritesCampers.length > 0 ? (
         <CamperList campers={favouritesCampers} />
       ) : (
-        <p>No favourites yet.</p>
+        <p className={css["favourites-text"]}>No favourites yet.</p>
       )}
     </div>
   );
