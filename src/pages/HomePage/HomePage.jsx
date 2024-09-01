@@ -1,5 +1,6 @@
 // src/pages/HomePage/HomePage.jsx
 
+import { Link } from 'react-router-dom';
 import DocumentTitle from '../../components/DocumentTitle.jsx';
 import css from './HomePage.module.scss';
 
@@ -9,14 +10,20 @@ export default function HomePage() {
       <DocumentTitle>Camper Rental</DocumentTitle>
 
       <div className={css.container}>
-        <h1 className={css.title}>
-          Welcome to Camper Rental
-        </h1>
-        <p className={css.subtitle}>
+      <p className={css.subtitle}>
           Your adventure starts here! Explore our wide range of campers and find the perfect fit for your next journey.
         </p>
-        <img src="../../../public/camper.png" alt="camping trip"></img>
-        
+        {/* Контейнер для картинки та заголовка */}
+        <div className={css.imageContainer}>
+          {/* Назва з посиланням */}
+          <Link to="/catalog" className={css.titleLink}>
+            <h1 className={css.title}>
+              TravelTrucks
+            </h1>
+          </Link>
+          <img src="../../../public/camper.png" alt="camping trip" className={css.image} />
+        </div>
+
       </div>
     </>
   );

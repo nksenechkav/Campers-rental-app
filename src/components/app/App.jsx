@@ -7,6 +7,7 @@ import { Layout } from '../layout/Layout.jsx';
 const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const CatalogPage = lazy(() => import('../../pages/CatalogPage/CatalogPage'));
 const FavouritesPage = lazy(() => import('../../pages/FavouritesPage/FavouritesPage'));
+const NotFoundPage = lazy(() => import("../../pages/notFoundPage/NotFoundPage"));
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/favorites" element={<FavouritesPage />} />
+        <Route path="*" element={<NotFoundPage/>}/>
       </Routes>
     </Layout>
 );

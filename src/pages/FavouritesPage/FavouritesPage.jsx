@@ -7,7 +7,6 @@ import { selectIsLoading, selectError, selectFavouritesCampers } from '../../red
 import LoaderComponent from '../../components/loader/Loader.jsx';
 import ErrorMessage from '../../components/error/ErrorMessage.jsx';
 import CamperList from '../../components/camperList/CamperList.jsx';
-import SearchBox from '../../components/searchBox/SearchBox.jsx';
 import css from './FavouritesPage.module.scss';
 
 export default function FavouritesPage() {
@@ -18,7 +17,6 @@ export default function FavouritesPage() {
   return (
     <div className={css["favourites-page-container"]}>
       <DocumentTitle>Favourites</DocumentTitle>
-      <SearchBox/>
       {isLoading && <LoaderComponent />}
       {error && <ErrorMessage />}
       {favouritesCampers.length > 0 ? (
