@@ -75,6 +75,7 @@ input:focus {
   height: 95px;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   align-items: center;
   transition: border 0.3s ease;
 }
