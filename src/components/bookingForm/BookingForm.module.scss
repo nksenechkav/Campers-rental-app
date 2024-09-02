@@ -52,12 +52,14 @@
     textarea {
       width: 400px;
       height: 114px;
+      resize: none;
     }
 
     input:focus,
     textarea:focus {
       outline: none;
       border: none;
+      resize: none;
     }
 
     .error {
