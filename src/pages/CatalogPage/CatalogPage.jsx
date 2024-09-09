@@ -27,8 +27,12 @@ export default function CatalogPage() {
       <DocumentTitle>Catalog</DocumentTitle>
       <SearchBox/>
       {isLoading && <LoaderComponent />}
-      {error && <ErrorMessage />}
-      <CamperList campers={filteredCampers} />
+      {error && <ErrorMessage />}  
+      {filteredCampers.length > 0 ? (
+        <CamperList campers={filteredCampers} />
+      ) : (
+        <p className={css["catalog-text"]}>No searched campers.</p>
+      )}
     </div>
   );
 }
