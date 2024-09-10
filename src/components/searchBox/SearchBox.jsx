@@ -1,31 +1,50 @@
 // src/pages/searchBox/SearchBox.jsx
 
-import { changeFilter, toggleEquipment, changeVehicleType } from '../../redux/filters/slice.js';
+import { changeFilter, toggleEquipment, changeVehicleType, resetFilters } from '../../redux/filters/slice.js';
 import css from './SearchBox.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectLocationFilter, selectEquipmentFilters, selectVehicleTypeFilter } from '../../redux/filters/selectors.js';
+import { useState } from 'react';
 
 const SearchBox = () => {
   const dispatch = useDispatch();
-  const filter = useSelector(selectLocationFilter);
-  const equipmentFilters = useSelector(selectEquipmentFilters);
-  const selectedVehicleType = useSelector(selectVehicleTypeFilter);
+  const initialFilter = useSelector(selectLocationFilter);
+  const initialEquipmentFilters = useSelector(selectEquipmentFilters);
+  const initialVehicleType = useSelector(selectVehicleTypeFilter);
 
-  const handleChange = (e) => {
-    const newValue = e.target.value;
-    dispatch(changeFilter(newValue));
-  };
+  const [filter, setFilter] = useState(initialFilter);
+  const [equipmentFilters, setEquipmentFilters] = useState(initialEquipmentFilters);
+  const [selectedVehicleType, setSelectedVehicleType] = useState(initialVehicleType);
 
+  // Оновлюємо локальний стан для фільтрів
+  const handleLocationChange = (e) => setFilter(e.target.value);
   const handleCheckboxChange = (event) => {
     const { id, checked } = event.target;
-    dispatch(toggleEquipment({ equipmentId: id, checked })); // Оновлення Redux store
+    setEquipmentFilters({
+      ...equipmentFilters,
+      [id]: checked
+    });
   };
+  const handleRadioChange = (event) => setSelectedVehicleType(event.target.id);
 
-  const handleRadioChange = (event) => {
-    const { id } = event.target;
-    dispatch(changeVehicleType(id)); // Оновлення Redux store
+  // Кнопка "Search" для застосування фільтрів
+  const handleSearchClick = () => {
+    // Скидаємо фільтри у Redux
+    dispatch(resetFilters());
+
+    // Встановлюємо нові фільтри у Redux
+    dispatch(changeFilter(filter));
+    Object.entries(equipmentFilters).forEach(([equipmentId, checked]) => {
+      dispatch(toggleEquipment({ equipmentId, checked }));
+    });
+    dispatch(changeVehicleType(selectedVehicleType));
+
+    // Скидаємо локальний стан після скидання фільтрів у Redux
+    setFilter("");
+    setEquipmentFilters({});
+    setSelectedVehicleType("");
   };
-
+  
   return (
     <div className={css.searchBox}>
       <div className={css.inputWrapper}>
@@ -38,7 +57,7 @@ const SearchBox = () => {
           type="text"
           placeholder="Kyiv, Ukraine"
           value={filter}
-          onChange={handleChange}
+          onChange={handleLocationChange}
         />
       </div>
       <p className={css["label-text"]}>Filters</p>
@@ -111,6 +130,9 @@ const SearchBox = () => {
           </li>
         ))}
       </ul>
+      <button className={css.btn} onClick={handleSearchClick}>
+        Search
+      </button>
     </div>
   );
 };

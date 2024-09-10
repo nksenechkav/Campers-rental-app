@@ -28,9 +28,10 @@
 
 .info-wrapper {
   width: 526px;
+  height: 310px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  justify-content: space-between;
 }
 
 .my-icon {

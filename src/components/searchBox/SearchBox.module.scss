@@ -128,7 +128,7 @@ input:focus {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 36px;
-  margin-bottom: 24px;
+  margin-bottom: 64px;
 }
 
 .radio-label {
@@ -150,4 +150,22 @@ input:focus {
 
 .radio-input {
   display: none; // Сховати стандартний чекбокс
+}
+
+.btn {
+  display: block;
+  max-width: 173px;
+  height: 56px;
+  background-color: #D84343;
+  color: #F2F4F7;
+  border: none;
+  padding: 16px 60px;
+  border-radius: 200px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #E44848;
+  color: #F7F7F7;
 }
