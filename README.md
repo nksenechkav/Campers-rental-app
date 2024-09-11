@@ -36,20 +36,20 @@ Use our filtering options to narrow down your search based on equipment and camp
 Add your favorite listings to your profile for quick reference later.
 
 ### 4. 🛠️ Details
-![Camper-details](https://github.com/nksenechkav/campers-rental-app/blob/main/public/details.png?raw=true)
 Before making a booking, you can explore detailed information about each camper van, including specifications, available amenities, and more. This allows you to make an informed decision based on your travel preferences.
+![Camper-details](https://github.com/nksenechkav/campers-rental-app/blob/main/public/details.png?raw=true)
 
 ### 5. ⚙️ Features
-![Camper-features](https://github.com/nksenechkav/campers-rental-app/blob/main/public/features.png?raw=true)
 Each camper van comes with its own set of features and equipment, such as kitchen facilities, air conditioning, or extra sleeping space. You can explore these features to ensure that the camper meets your needs for comfort and convenience during your trip.
+![Camper-features](https://github.com/nksenechkav/campers-rental-app/blob/main/public/features.png?raw=true)
 
 ### 6. ⭐ Reviews
-![Camper-reviews](https://github.com/nksenechkav/campers-rental-app/blob/main/public/reviews.png?raw=true)
 Read reviews left by other users to learn more about their experience with specific camper vans. You can also leave your own feedback after your trip to help others in the community make better choices.
+![Camper-reviews](https://github.com/nksenechkav/campers-rental-app/blob/main/public/reviews.png?raw=true)
 
 ### 7. 🛒 Book
-![Camper-booking](https://github.com/nksenechkav/campers-rental-app/blob/main/public/booking.png?raw=true)
 Once you’ve found the perfect camper van, proceed with booking through our straightforward process.
+![Camper-booking](https://github.com/nksenechkav/campers-rental-app/blob/main/public/booking.png?raw=true)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -77,27 +77,27 @@ Hosting platform for deploying the application.
 
 <div align="center">
   <a href="https://campers-rental-app.vercel.app/" style="text-decoration:none;">
-    <div style="display:inline-block; text-align:center; margin:10px;">
-      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/home.png?raw=true" alt="Home Page" width="200px" style="border-radius:10px;"/>
-      <div style="font-size:16px; margin-top:5px;">
+    <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
+      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/home.png?raw=true" alt="Home Page" width="200px" height="150px" style="border-radius:10px;"/>
+      <div style="font-size:20px; margin-top:10px; color:#333;">
         🏠 <strong>Home</strong>
       </div>
     </div>
   </a>
 
   <a href="https://campers-rental-app.vercel.app/catalog" style="text-decoration:none;">
-    <div style="display:inline-block; text-align:center; margin:10px;">
-      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/catalog.png?raw=true" alt="Catalog Page" width="200px" style="border-radius:10px;"/>
-      <div style="font-size:16px; margin-top:5px;">
+    <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
+      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/catalog.png?raw=true" alt="Catalog Page" width="200px" height="150px" style="border-radius:10px;"/>
+      <div style="font-size:20px; margin-top:10px; color:#333;">
         🗂️ <strong>Catalog</strong>
       </div>
     </div>
   </a>
 
   <a href="https://campers-rental-app.vercel.app/favorites" style="text-decoration:none;">
-    <div style="display:inline-block; text-align:center; margin:10px;">
-      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/favourites.png?raw=true" alt="Favorites Page" width="200px" style="border-radius:10px;"/>
-      <div style="font-size:16px; margin-top:5px;">
+    <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
+      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/favourites.png?raw=true" alt="Favorites Page" width="200px" height="150px" style="border-radius:10px;"/>
+      <div style="font-size:20px; margin-top:10px; color:#333;">
         ❤️ <strong>Favorites</strong>
       </div>
     </div>
