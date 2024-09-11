@@ -60,7 +60,8 @@ Hosting platform for deploying the application.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-🌐 Pages
+## 🌐 Pages
+
 <div align="center">
   <a href="https://campers-rental-app.vercel.app/" style="text-decoration:none;">
     <button style="background-color:#4CAF50; color:white; padding:10px 20px; border:none; border-radius:5px; font-size:16px; cursor:pointer;">
@@ -88,24 +89,22 @@ Hosting platform for deploying the application.
   <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/catalog.png?raw=true" alt="Catalog Page" width="200px"/>
   <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/favourites.png?raw=true" alt="Favorites Page" width="200px"/>
 </div>
---------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## 🏁 Getting Started
 
 To run the project locally, follow these steps:
 
 ### 1. 📥 Clone the repo:
-bash
+
 git clone https://github.com/nksenechkav/campers-rental-app.git
 
 ### 2. 📦 Install dependencies:
-bash
-Копіювати код
+
 npm install
 
 ### 3. 🚀 Start the development server:
-bash
-Копіювати код
+
 npm start
 
 --------------------------------------------------------------------------------------------------------------------------------------------
