@@ -1,4 +1,4 @@
-![Home Page](https://github.com/nksenechkav/campers-rental-app/blob/main/public/home.png?raw=true)
+![Home Page](https://github.com/nksenechkav/campers-rental-app/blob/main/public/campers.png?raw=true)
 
 Welcome to the Camper Van Booking Application! This web app is designed to streamline the process of renting camper vans for your travel adventures. Our platform makes it easy for users to find and book the perfect camper for their needs. With user-friendly search and filter options, you can quickly locate available camper vans based on location, type, and amenities.
 
@@ -57,16 +57,16 @@ Hosting platform for deploying the application.
 🌐 Pages
 
 Home
+![Home Page](https://github.com/nksenechkav/campers-rental-app/blob/main/public/home.png?raw=true)
 Explore the home page for a quick overview of the platform.
 
 Catalog
-Browse the list of available camper vans in different locations.
 ![Catalog Page](https://github.com/nksenechkav/campers-rental-app/blob/main/public/catalog.png?raw=true)
+Browse the list of available camper vans in different locations.
 
 Favorites
-View and manage your saved camper van listings.
-
 ![Favourites Page](https://github.com/nksenechkav/campers-rental-app/blob/main/public/favourites.png?raw=true)
+View and manage your saved camper van listings.
 
 
 Getting Started
