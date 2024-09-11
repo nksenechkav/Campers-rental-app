@@ -76,7 +76,7 @@ Hosting platform for deploying the application.
 ## 🌐 Pages
 
 <div align="center">
-  <a href="https://campers-rental-app.vercel.app/" style="text-decoration:none;">
+  <a href="https://campers-rental-app.vercel.app/" target="_blank" style="text-decoration:none;">
     <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
       <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/home.png?raw=true" alt="Home Page" width="200px" height="150px" style="border-radius:10px;"/>
       <div style="font-size:20px; margin-top:10px; color:#333;">
@@ -85,7 +85,7 @@ Hosting platform for deploying the application.
     </div>
   </a>
 
-  <a href="https://campers-rental-app.vercel.app/catalog" style="text-decoration:none;">
+  <a href="https://campers-rental-app.vercel.app/catalog" target="_blank" style="text-decoration:none;">
     <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
       <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/catalog.png?raw=true" alt="Catalog Page" width="200px" height="150px" style="border-radius:10px;"/>
       <div style="font-size:20px; margin-top:10px; color:#333;">
@@ -94,7 +94,7 @@ Hosting platform for deploying the application.
     </div>
   </a>
 
-  <a href="https://campers-rental-app.vercel.app/favorites" style="text-decoration:none;">
+  <a href="https://campers-rental-app.vercel.app/favorites" target="_blank" style="text-decoration:none;">
     <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
       <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/favourites.png?raw=true" alt="Favorites Page" width="200px" height="150px" style="border-radius:10px;"/>
       <div style="font-size:20px; margin-top:10px; color:#333;">
