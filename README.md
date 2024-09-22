@@ -41,6 +41,7 @@ Before making a booking, you can explore detailed information about each camper 
 
 ### 5. ⚙️ Features
 Each camper van comes with its own set of features and equipment, such as kitchen facilities, air conditioning, or extra sleeping space. You can explore these features to ensure that the camper meets your needs for comfort and convenience during your trip.
+
 ![Camper-features](https://github.com/nksenechkav/campers-rental-app/blob/main/public/features.png?raw=true)
 
 ### 6. ⭐ Reviews
@@ -75,34 +76,34 @@ Hosting platform for deploying the application.
 
 ## 🌐 Pages
 
-<div align="center">
-  <a href="https://campers-rental-app.vercel.app/" target="_blank" style="text-decoration:none;">
-    <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
-      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/home.png?raw=true" alt="Home Page" width="200px" height="150px" style="border-radius:10px;"/>
-      <div style="font-size:20px; margin-top:10px; color:#333;">
-        🏠 <strong>Home</strong>
-      </div>
-    </div>
-  </a>
-
-  <a href="https://campers-rental-app.vercel.app/catalog" target="_blank" style="text-decoration:none;">
-    <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
-      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/catalog.png?raw=true" alt="Catalog Page" width="200px" height="150px" style="border-radius:10px;"/>
-      <div style="font-size:20px; margin-top:10px; color:#333;">
-        🗂️ <strong>Catalog</strong>
-      </div>
-    </div>
-  </a>
-
-  <a href="https://campers-rental-app.vercel.app/favorites" target="_blank" style="text-decoration:none;">
-    <div style="display:inline-block; text-align:center; margin:10px; width:220px;">
-      <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/favourites.png?raw=true" alt="Favorites Page" width="200px" height="150px" style="border-radius:10px;"/>
-      <div style="font-size:20px; margin-top:10px; color:#333;">
-        ❤️ <strong>Favorites</strong>
-      </div>
-    </div>
-  </a>
-</div>
+<table align="center">
+  <tr>
+    <td align="center" style="margin:10px;">
+      <a href="https://campers-rental-app.vercel.app/" target="_blank" style="text-decoration:none;">
+        <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/home.png?raw=true" alt="Home Page" width="200px" height="150px" style="border-radius:10px;"/>
+        <div style="font-size:20px; margin-top:10px; color:#333;">
+          🏠 <strong>Home</strong>
+        </div>
+      </a>
+    </td>
+    <td align="center" style="margin:10px;">
+      <a href="https://campers-rental-app.vercel.app/catalog" target="_blank" style="text-decoration:none;">
+        <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/catalog.png?raw=true" alt="Catalog Page" width="200px" height="150px" style="border-radius:10px;"/>
+        <div style="font-size:20px; margin-top:10px; color:#333;">
+          🗂️ <strong>Catalog</strong>
+        </div>
+      </a>
+    </td>
+    <td align="center" style="margin:10px;">
+      <a href="https://campers-rental-app.vercel.app/favorites" target="_blank" style="text-decoration:none;">
+        <img src="https://github.com/nksenechkav/campers-rental-app/blob/main/public/favourites.png?raw=true" alt="Favorites Page" width="200px" height="150px" style="border-radius:10px;"/>
+        <div style="font-size:20px; margin-top:10px; color:#333;">
+          ❤️ <strong>Favorites</strong>
+        </div>
+      </a>
+    </td>
+  </tr>
+</table>
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
